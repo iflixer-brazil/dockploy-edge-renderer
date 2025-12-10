@@ -15,7 +15,7 @@ services:
       restart_policy:
         condition: any
       update_config:
-        order: start-first
+        order: stop-first
         parallelism: 1
 
 volumes:
