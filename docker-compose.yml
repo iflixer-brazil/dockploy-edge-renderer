@@ -5,6 +5,7 @@ services:
     ports:
       - "80"
     volumes:
+      - ../files/ext_backends.conf:/etc/nginx/includes/ext_backends.conf:ro
       - img_cache:/var/cache/nginx
     networks:
       - dokploy-network
