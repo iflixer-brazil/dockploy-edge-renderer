@@ -1,0 +1,17 @@
+services:
+  ext-img-cache:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "80"
+    volumes:
+      - img_cache:/var/cache/nginx
+    networks:
+      - dokploy-network
+
+volumes:
+  img_cache:
+
+networks:
+  dokploy-network:
+    external: true
