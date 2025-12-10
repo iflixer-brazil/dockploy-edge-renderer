@@ -1,15 +1,24 @@
+
 services:
   ext-img-cache:
-    build: .
-    restart: unless-stopped
+    image: ghcr.io/iflixer-cis/ext-img-cache:latest
     ports:
       - "80"
     volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
       - ../files/ext_backends.conf:/etc/nginx/includes/ext_backends.conf:ro
       - ../files/redirects.conf:/etc/nginx/includes/redirects.conf:ro
       - img_cache:/var/cache/nginx
     networks:
       - dokploy-network
+
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: any
+      update_config:
+        order: start-first
+        parallelism: 1
 
 volumes:
   img_cache:
