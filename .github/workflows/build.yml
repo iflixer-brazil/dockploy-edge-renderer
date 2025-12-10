@@ -27,5 +27,5 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/iflixer-cis/ext-img-cache:latest
-            ghcr.io/iflixer-cis/ext-img-cache:${{ github.sha }}
+            ghcr.io/iflixer-brazil/ext-img-cache:latest
+            ghcr.io/iflixer-brazil/ext-img-cache:${{ github.sha }}
