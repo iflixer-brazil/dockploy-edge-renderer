@@ -1,7 +1,7 @@
 
 services:
   ext-img-cache:
-    image: ghcr.io/iflixer-cis/ext-img-cache:latest
+    image: ghcr.io/iflixer-brazil/ext-img-cache:latest
     ports:
       - "80"
     volumes:
